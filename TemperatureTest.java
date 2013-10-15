@@ -160,14 +160,10 @@ public class TemperatureTest {
 		assertEquals(testingUnit,unitResulted); 
 	}
 	/*
-	converter = new FahrenheitTemperature(212);
-	   assertEquals(converter.toCelsius().temperature, 100, delta);
-	 *
-	*Tempeature temp = new Temperature(100, Temperature.Units.FAHRENHEIT);
-	temp.changeUnits(Temperature.Units.KELVIN);
-	assertTrue(Math.abs(temp.getValue() - 310.93) < 0.1);
-	*
 	 * now we test the convertors with different conversion combinations
+	 * each method for each conversion tries different values including:
+	 * normal in range value,zero,negative,decimals,and negative decimals, so
+	 * that values from different boundries are tested 
 	 */
 	@Test
 	public void testChangeUnitsCtoK()//[K] = [°C] + 273.15
