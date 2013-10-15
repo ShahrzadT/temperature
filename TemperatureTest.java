@@ -174,35 +174,35 @@ public class TemperatureTest {
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 473.15;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//zero value
 		testTemp=new Temperature(0,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 273.15;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative value
 		testTemp=new Temperature(-200,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 73.15;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//decimal value
 		testTemp=new Temperature(12.3456,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 285.4956;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative decimal value
 		testTemp=new Temperature(-12.3456,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 260.8044;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		
 		
 	}
@@ -215,35 +215,35 @@ public class TemperatureTest {
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= -73.15;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//zero value
 		testTemp=new Temperature(0,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= -273.15;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative value
 		testTemp=new Temperature(-200,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= -473.15;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//decimal value
 		testTemp=new Temperature(12.3456,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= -260.8044;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative decimal value
 		testTemp=new Temperature(-12.3456,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= -285.4956;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 	}
 	@Test
 	//[°F] = [°C] × (9/5) + 32
@@ -262,7 +262,7 @@ public class TemperatureTest {
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= ((0*(9/5))+32);
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative value
 		testTemp=new Temperature(-200,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.FAHRENHEIT;
@@ -276,14 +276,14 @@ public class TemperatureTest {
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= ((((12.3456)*(9))/5)+32);
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative decimal values
 		testTemp=new Temperature(-12.3456,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.FAHRENHEIT;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= ((((-12.3456)*(9))/5)+32);
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 	}
 	@Test
 	public void testChangeUnitsFtoC()//[°C] = ([°F] - 32) * 5/9
@@ -294,35 +294,35 @@ public class TemperatureTest {
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (200-32) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//zero value
 		testTemp=new Temperature(0,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (0-32) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative value
 		testTemp=new Temperature(-200,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (-200-32) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//decimal value
 		testTemp=new Temperature(12.3456,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (12.3456-32) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative decimal value
 		testTemp=new Temperature(-12.3456,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.CELSIUS;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (-12.3456-32) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 
 	}
 	@Test
@@ -333,35 +333,35 @@ public class TemperatureTest {
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 200 * 9.0/5.0 - 459.67;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//zero value
 		testTemp=new Temperature(0,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.FAHRENHEIT;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 0 * 9.0/5.0 - 459.67;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative value
 		testTemp=new Temperature(-200,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.FAHRENHEIT;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= -200 * 9.0/5.0 - 459.67;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//decimal value
 		testTemp=new Temperature(12.3456,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.FAHRENHEIT;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 12.3456 * 9.0/5.0 - 459.67;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative decimal value
 		testTemp=new Temperature(-12.3456,Temperature.Units.KELVIN);
 		testConvUnit=Temperature.Units.FAHRENHEIT;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (-12.3456) * 9.0/5.0 - 459.67;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 
 		
 	}
@@ -373,35 +373,35 @@ public class TemperatureTest {
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (200 + 459.67) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//zero value
 		testTemp=new Temperature(0,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (0+ 459.67) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative value
 		testTemp=new Temperature(-200,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (-200 + 459.67) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//decimal value
 		testTemp=new Temperature(12.3456,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (12.3456 + 459.67) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 		//negative decimal value
 		testTemp=new Temperature(-12.3456,Temperature.Units.FAHRENHEIT);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= (-12.3456 + 459.67) * 5.0/9.0;
-		assertEquals(expectedConvertedValue,testTemp.getValue(),PRECISION_ERROR);
+		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
 
 		
 		
