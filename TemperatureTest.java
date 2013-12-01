@@ -175,7 +175,11 @@ public class TemperatureTest {
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 473.15;
 		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
-		//zero value
+	}
+	@Test
+	public void testChangeUnitsCtoK()//[K] = [°C] + 273.15
+	{
+	//zero value
 		testTemp=new Temperature(0,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.KELVIN;
 		testTemp.changeUnits(testConvUnit);
