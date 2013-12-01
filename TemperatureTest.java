@@ -208,6 +208,10 @@ public class TemperatureTest {
 		valueResulted=testTemp.getValue();
 		expectedConvertedValue= 285.4956;
 		assertEquals(expectedConvertedValue,valueResulted,PRECISION_ERROR);
+	}
+	@Test
+	public void testChangeUnitsCtoK()//[K] = [°C] + 273.15
+	{
 		//negative decimal value
 		testTemp=new Temperature(-12.3456,Temperature.Units.CELSIUS);
 		testConvUnit=Temperature.Units.KELVIN;
